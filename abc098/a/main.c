@@ -9,68 +9,68 @@
 // 結果
 // 足し算と掛け算の結果が同じ値　かつ　足し算と掛け算の結果が引き算の結果が一番大きいはありえない。
 
-#include<stdio.h>
-int main()
-{
-    int a,b;
-    scanf("%d %d",&a,&b);
-	printf("%d %d\n",a,b);
-
-	int sum = a + b;
-   // printf("sum : %d \n",sum);
-    int mul= a * b;
-   // printf("mul : %d\n",mul);
-    int sub = a -b ;
-   // printf("sub : %d\n",sub);
-
-	int i;
-	int j;
-	for (i = -1000; i <= 1000; i++)	//aの値
-	{
-		for (j = -1000; j <= 1000; j++)	//bの値
-		{
-			if((sum > sub) && (sum > mul)){
-				// printf("プラスが大きいとき%d\n",plus);
-			} else if((sub > sum) && (sub > mul)){
-				printf("マイナスが大きいとき%d\n",sub);
-			} else {
-				// printf("掛け算が大きいとき　か　同じ値の時%d\n",multipl);
-			}
-		}
-	}
-
-    return 0;
-}
-
-// ===== 完全写経したやつ =====
-
 // #include<stdio.h>
 // int main()
 // {
 //     int a,b;
 //     scanf("%d %d",&a,&b);
-//     int sum = a + b;
+// 	printf("%d %d\n",a,b);
+
+// 	int sum = a + b;
 //    // printf("sum : %d \n",sum);
 //     int mul= a * b;
 //    // printf("mul : %d\n",mul);
 //     int sub = a -b ;
 //    // printf("sub : %d\n",sub);
 
-//     if((sum>=mul) && (sum>=sub)){
-//         printf("%d\n",sum);
-// 		return (0);
+// 	int i;
+// 	int j;
+// 	for (i = -1000; i <= 1000; i++)	//aの値
+// 	{
+// 		for (j = -1000; j <= 1000; j++)	//bの値
+// 		{
+// 			if((sum > sub) && (sum > mul)){
+// 				// printf("プラスが大きいとき%d\n",plus);
+// 			} else if((sub > sum) && (sub > mul)){
+// 				printf("マイナスが大きいとき%d\n",sub);
+// 			} else {
+// 				// printf("掛け算が大きいとき　か　同じ値の時%d\n",multipl);
+// 			}
+// 		}
 // 	}
-// 	if((mul>=sum) && (mul>=sub)){
-//         printf("%d\n",mul);
-// 		return (0);
-//     }
-//     if((sub>=sum) && (sub>=mul)){
-// 		printf("%d\n",sub);
-//     }
-
 
 //     return 0;
 // }
+
+// ===== 完全写経したやつ =====
+
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int sum = a + b;
+   // printf("sum : %d \n",sum);
+    int mul= a * b;
+   // printf("mul : %d\n",mul);
+    int sub = a -b ;
+   // printf("sub : %d\n",sub);
+
+    if((sum>=mul) && (sum>=sub)){
+        printf("%d\n",sum);
+		return (0);
+	}
+	if((mul>=sum) && (mul>=sub)){
+        printf("%d\n",mul);
+		return (0);
+    }
+    if((sub>=sum) && (sub>=mul)){
+		printf("%d\n",sub);
+    }
+
+
+    return 0;
+}
 
 // ===== 写経して自分の変数名ver =====
 
@@ -83,20 +83,23 @@ int main()
 // 	int b;//1 -2
 
 // 	scanf("%d%d", &a, &b);
-// 	printf("%d %d\n",a,b);
+// 	// printf("%d %d\n",a,b);
 
 // 	int plus = a + b;//4 2
 // 	int minus = a - b;//2 6
 // 	int multipl = a * b;//3 -6
 
-// 	printf("%d %d %d\n",plus,minus,multipl);
+// 	// printf("%d %d %d\n",plus,minus,multipl);
 
 // 	if((plus > minus) && (plus > multipl)){
-// 		printf("プラスが大きいとき%d\n",plus);
+// 		// printf("プラスが大きいとき%d\n",plus);
+// 		printf("%d\n",plus);
 // 	} else if((minus > plus) && (minus > multipl)){
-// 		printf("マイナスが大きいとき%d\n",minus);
+// 		// printf("マイナスが大きいとき%d\n",minus);
+// 		printf("%d\n",minus);
 // 	} else {
-// 		printf("掛け算が大きいとき　か　同じ値の時%d\n",multipl);
+// 		// printf("掛け算が大きいとき　か　同じ値の時%d\n",multipl);
+// 		printf("%d\n",multipl);
 // 	}
 
 // 	return (0);

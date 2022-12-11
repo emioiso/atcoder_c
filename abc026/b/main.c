@@ -3,14 +3,15 @@
 int	main(void)
 {
 	int n;
+	int i;
+	int r;
 
-	scanf("%d", &n);
+	scanf("%d",&n);
 	// printf("%d\n",n);
 
-	if(n < 1000){
-		printf("ABC\n");
-	} else {
-		printf("ABD\n");
+	for (i = 0; i < n; i++)
+	{
+		printf("%d\n",r[i]);
 	}
 
 	return (0);
