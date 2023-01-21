@@ -1,30 +1,113 @@
-//写経 #38209317
-
 #include <stdio.h>
-int main() {
+int	main(void)
+{
+	int	n;
+	int	p;
+	int	q;
+	int	r;
+	int	s;
 
-    int P, Q, R, S, N, i, j;
-    scanf("%d%d%d%d%d", &N, &P, &Q, &R, &S);
-    int a[N], temp[N];
+	scanf("%d%d%d%d%d",&n,&p,&q,&r,&s);
+	// printf("%d %d %d %d %d\n",n,p,q,r,s);
 
-    for(i=0; i<N; i++){
-        scanf("%d", &a[i]);
-    }
-    for(i=P-1; i<=Q-1; i++){
-        temp[i] = a[i];
-        a[i] = a[R-1];
-        a[R-1] = temp[i];
-        R++;
-    }
-    for(i=0; i<N; i++){
-        printf("%d", a[i]);
-		if(i < N -1){
+	int a[n];
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d",&a[i]);
+		// printf("%d ",a[i]);
+	}
+	int tmp[n]; //p〜qの配列を取得する
+	for (int i = p - 1; i <= q - 1; i++)
+	{
+		// printf("\na[i]=%d", a[i]);
+		tmp[i] = a[i];
+		// printf("\ntmp[i]=%d", tmp[i]);
+	}
+	// printf("\n");
+
+	int tmp2[n];//r〜sの配列を取得する
+	for (int i = r - 1; i <= s - 1; i++)
+	{
+		// printf("\na[i]=%d", a[i]);
+		tmp2[i] = a[i];
+		// printf("\ntmp2[i]=%d", tmp2[i]);
+	}
+	// printf("\n");
+
+	int b[n];//bの空の配列を作る。
+	int j = 0;
+	for (int i = 0; i < p - 1; i++) // aの配列の0からa[p - 1]番目未満の要素をbの配列に代入する。
+	{
+		b[j] = a[i];
+		// printf("%d ", b[i]);
+		j++;
+	}
+
+	for (int i = r - 1; i <= s - 1; i++)//aの配列のa[r - 1]からa[s - 1]番目未満の要素をbの配列に代入する。
+	{
+		b[j] = a[i];
+		// printf("%d ", b[i]);
+		j++;
+	}
+
+	for (int i = q ; i < r - 1; i++)//aの配列のa[q]からa[r - 1]番目未満の要素をbの配列に代入する。
+	{
+		b[j] = a[i];
+		// printf("%d ", b[i]);
+		j++;
+	}
+
+	for (int i = p - 1; i < q; i++)//aの配列のa[p - 1]からa[q]番目未満の要素をbの配列に代入する。
+	{
+		b[j++] = a[i];
+		// printf("%d ", b[i]);
+	}
+
+	for (int i = s; i <= n - 1; i++)//aの配列のa最後の要素にbの配列に代入する。
+	{
+		b[j++] = a[i];
+		// printf("%d", b[i]);
+		// printf("i=%d ", i);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d", b[i]);
+		if(i < n - 1){
 			printf(" ");
 		}
-    }
+	}
 	printf("\n");
-    return 0;
+
+
+	return (0);
 }
+
+// //写経 #38209317
+// #include <stdio.h>
+// int main() {
+
+//     int P, Q, R, S, N, i, j;
+//     scanf("%d%d%d%d%d", &N, &P, &Q, &R, &S);
+//     int a[N], temp[N];
+
+//     for(i=0; i<N; i++){
+//         scanf("%d", &a[i]);
+//     }
+//     for(i=P-1; i<=Q-1; i++){
+//         temp[i] = a[i];
+//         a[i] = a[R-1];
+//         a[R-1] = temp[i];
+//         R++;
+//     }
+//     for(i=0; i<N; i++){
+//         printf("%d", a[i]);
+//         if(i < N -1){
+//             printf(" ");
+//         }
+//     }
+//     printf("\n");
+//     return 0;
+// }
 
 // #include <stdio.h>
 
