@@ -1,20 +1,22 @@
-#include <stdio.h>
+// 写経 #122169
 
+#include <stdio.h>
 int	main(void)
 {
-	int N;
+	int	n;
+
+	scanf("%d",&n);
+	// printf("%d\n",n);
+
+	int salaryAve = 0;
 	int i;
-	int x;
-
-	scanf("%d",&N);
-	// printf("%d\n",N);
-
-	for (i = 0; i < N; i++)
+	for (i = 1; i <= n; i++)
 	{
-		// printf("%d\n",i);
-		x = N;
-		printf("%d\n", x);
+		// printf("i=%d\n", i);
+		salaryAve += i * 10000;
+		// printf("%d\n", salary);
 	}
+		printf("%d\n", salaryAve / n);
 
 	return (0);
 }
